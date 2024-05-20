@@ -26,7 +26,7 @@ loss_fn = nn.CrossEntropyLoss().to(device)
 learn_rate = 1e-2
 optimizer = torch.optim.SGD(model.parameters(), lr=learn_rate)
 
-epoch = 25
+epoch = 10
 total_train_step = 0
 start_time = time.time()
 for i in range(epoch):
@@ -62,7 +62,7 @@ for i in range(epoch):
     print(f'Epoch:{i+1},Test Accuracy: {total_accuracy / len(test_dataset)}')
     writer.add_scalar('test_accuracy', total_accuracy / len(test_dataset), i)
 
-    torch.save(model, f'MNISTModel_{i}.pth')
+    torch.save(model, f'../models/MNISTModel_{i}.pth')
 
 writer.close()
 

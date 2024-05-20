@@ -15,7 +15,6 @@ class MNISTModel(nn.Module):
         self.flatten = nn.Flatten()
         self.fc1 = nn.Linear(3136,128)
         self.fc2 = nn.Linear(128, 10)
-
     def forward(self, x):
         x = self.conv1(x)
         x = self.relu1(x)
